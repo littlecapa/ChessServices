@@ -1,11 +1,16 @@
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify
+
 app = Flask(__name__)
+
+def log(logStr):
+    print('Log <', dir(datetime), '>: ', logStr)
 
 @app.route('/health', methods=['GET'])
 def getHealth():
-    return jsonify(status = "ok", version = "0.1")
-    
+    log("Test")
+    return jsonify(status = "ok", version = "0.2")
+
 @app.route('/')
 def index():
    print('Request for index page received')
