@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 app = Flask(__name__)
 
 def log(logStr):
-    print('Log <', dir(datetime), '>: ', logStr)
+    print('Log <', datetime.datetime.now(), '>: ', logStr)
 
 @app.route('/health', methods=['GET'])
 def getHealth():
